@@ -8,5 +8,5 @@ setup(name='Writer',
       author='skiniya',
       author_email='',
       url='',
-      # packages=['faster-whisper'],
+      packages=['faster-whisper'],
      )
