@@ -10,7 +10,6 @@ from setuptools import find_packages, setup
 #     exec(compile(open(fname, encoding="utf-8").read(), fname, "exec"))
 #     return locals()["__version__"]
 
-
 requirements = []
 # if sys.platform.startswith("linux") and platform.machine() == "x86_64":
 #     requirements.append("triton==2.0.0")
@@ -37,9 +36,10 @@ setup(
     #         open(os.path.join(os.path.dirname(__file__), "requirements.txt"))
     #     )
     # ],
-    # entry_points={
-        # "console_scripts": ["whisper=whisper.transcribe:cli"],
-    # },
+    entry_points={
+        "console_scripts": ["converter=converter.convert:cli"],
+    },
     include_package_data=True,
     # extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"]},
 )
+
