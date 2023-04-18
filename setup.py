@@ -29,13 +29,14 @@ setup(
     url="",
     license="MIT",
     packages=find_packages(exclude=["tests*"]),
-    install_requires=requirements
-    + [
-        str(r)
-        for r in pkg_resources.parse_requirements(
-            open(os.path.join(os.path.dirname(__file__), "requirements.txt"))
-        )
-    ],
+    install_requires=["faster-whisper"],
+    # install_requires=requirements
+    # + [
+    #     str(r)
+    #     for r in pkg_resources.parse_requirements(
+    #         open(os.path.join(os.path.dirname(__file__), "requirements.txt"))
+    #     )
+    # ],
     # entry_points={
         # "console_scripts": ["whisper=whisper.transcribe:cli"],
     # },
