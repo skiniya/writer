@@ -8,5 +8,5 @@ setup(name='Distutils',
       author='skiniya',
       author_email='',
       url='',
-      packages=['faster_whisper'],
+      packages=['faster-whisper'],
      )
