@@ -15,7 +15,7 @@ def convert(sec):
 
 print("Сначала загружаем сюда наше аудио (для ПОЛНОГО написания), которое переименовано в цифры\n🔻🔻🔻🔻🔻\n")
 # uploaded = files.upload()
-for file in os.listdir('./'):
+for file in os.listdir('/content'):
     print(file)
     if fnmatch.fnmatch(file, '*.mp3'):
         dir: str = file
