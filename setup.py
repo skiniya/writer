@@ -2,11 +2,11 @@
 
 from distutils.core import setup
 
-setup(name='Distutils',
+setup(name='Writer',
       version='1.0',
       description='Writer',
       author='skiniya',
       author_email='',
       url='',
-      packages=['faster-whisper'],
+      # packages=['faster-whisper'],
      )
