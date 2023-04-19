@@ -1,3 +1,3 @@
-from .convert import convert
+from .full import convert
 
 print("convert")
