@@ -37,8 +37,7 @@ setup(
     #     )
     # ],
     entry_points={
-        "console_scripts": ["converter=converter_1.full:cli"],["converter=delete.del:cli"],
-    ["converter=converter_2.part:cli"]
+        "console_scripts": ["converter=converter.full:cli"]
 
     },
     include_package_data=True,
