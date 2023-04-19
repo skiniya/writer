@@ -15,7 +15,6 @@ def convert(sec):
 
 print("Начинаю...")
 for file in os.listdir('/content/'):
-    print(file)
     if fnmatch.fnmatch(file, '*.mp3'):
         dir: str = file
         id_audio = dir[:-4]
@@ -39,4 +38,4 @@ for file in os.listdir('/content/'):
             myfile.write(txt)
         myfile.close()
 
-        print("*****************\nГотово!\n✔️✔️✔️✔️✔️")
+        print("*****************\nГотово! Можно забрать текст из txt файла.\n✔️✔️✔️✔️✔️")
