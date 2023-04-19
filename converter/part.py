@@ -11,9 +11,7 @@ def convert(sec):
         sec %= 60
         return "%02d:%02d:%02d" % (hour, min, sec)
 
-#print("Сначала загружаем сюда наше аудио (для ЧАСТИЧНОГО написания), которое переименовано в цифры\n🔻🔻🔻🔻🔻\n")
-#from google.colab import files
-#uploaded = files.upload()
+print("Начинаю...\n")
 for file in os.listdir('/content/'):
     if fnmatch.fnmatch(file, '*.mp3'):
         dir : str = file
@@ -31,8 +29,8 @@ print("*****************\nВведите конечное время в форм
 t2 = input()
 t22 : int = time_to_sec(t2)
 from pydub import AudioSegment
-t_start = t11 * 1000  #      если нужно от начала - 0 * 1000
-t_end = t22 * 1000 #      60 секунд - до 1-й минуты
+t_start = t11 * 1000
+t_end = t22 * 1000
 newAudio = AudioSegment.from_mp3(f"{id_audio}.mp3")
 a = newAudio[t_start:t_end]
 a.export("fragment.mp3", format="mp3")
@@ -62,4 +60,4 @@ a.export("fragment.mp3", format="mp3")
     		print(t1,  tm, sep='\n', file=f)
     		f.seek(0, os.SEEK_END)
     		f.write(t2)
-print("*****************\nГотово!\n✔️✔️✔️✔️✔️")
+print("*****************\nГотово! Можно забрать текст из txt файла.\n✔️✔️✔️✔️✔️")

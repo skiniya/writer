@@ -13,7 +13,7 @@ def convert(sec):
     return "%02d:%02d:%02d" % (hour, min, sec)
 
 
-print("Начинаю...")
+print("Начинаю...\n")
 for file in os.listdir('/content/'):
     if fnmatch.fnmatch(file, '*.mp3'):
         dir: str = file
