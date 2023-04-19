@@ -25,7 +25,8 @@ for file in os.listdir('/content/'):
         model_size = "medium"  # лучшее воспроизведение текста
         model = WhisperModel(model_size, device="cpu", compute_type="int8")
         segments, info = model.transcribe(f"{id_audio}.mp3", beam_size=5)
-        ffmpeg - i f"{id_audio}".mp3 2 > & 1 | awk '/Duration/ { print "*****************\nДлина аудио: " substr($2,0,length($2)-3) }'
+        ffmpeg - i f"{id_audio}.mp3" 2 > & 1 | awk '/Duration/ { print "*****************\nДлина аудио: " substr($2," \
+                                                                                                        "0,length($2)-3) }'
         #print("*****************\nДлина аудио: %s (%dс) " % (convert(info.duration), info.duration))
         print('*****************\nТекст аудио:')
         myfile = open(f"{id_audio}.txt", "a")
