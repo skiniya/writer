@@ -1,11 +1,11 @@
-from .full import converter_full
+from .full import converter
 
 print("Full audio")
 
-from .part import converter_part
+from .part import converter
 
 print("Part of audio")
 
-from .delete import converter_del
+from .delete import converter
 
 print("Delete")
