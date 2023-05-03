@@ -2,7 +2,7 @@
 from faster_whisper import WhisperModel
 import fnmatch
 import os
-
+from tqdm import tqdm
 
 def convert(sec):
     sec = sec % (24 * 3600)
@@ -32,9 +32,10 @@ for file in os.listdir('/content/'):
 
         myfile = open(f"{id_audio}.txt", "a")
 
-        for segment in segments:
+        for segment in tqdm(segments, unit_scale=16, unit=' циклов', ascii=False, desc='Выполнение', ncols=50,
+                            position=0, total=(info.duration/10), dynamic_ncols=50, colour='#4CAF50'):
             myfile.write(segment.text)
-            print("[%s - %s] %s" % (convert(segment.start), convert(segment.end), segment.text))
+            #print("[%s - %s] %s" % (convert(segment.start), convert(segment.end), segment.text))
         myfile.close()
 
         with open(f"{id_audio}.txt", 'r+') as myfile:
