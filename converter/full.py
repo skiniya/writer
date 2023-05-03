@@ -22,10 +22,14 @@ for file in os.listdir('/content/'):
         #model_size = "medium"  # лучшее воспроизведение текста
         model_size = "large-v2" # более лучшее воспроизведение текста
         #model = WhisperModel(model_size, device="cpu", compute_type="int8")
+
+        print("Модель обработки аудио: " + model_size + "\n")
+
         model = WhisperModel(model_size, device="cuda", compute_type="int8_float16")
         segments, info = model.transcribe(f"{id_audio}.mp3", beam_size=5)
-        print("*****************\nДлина аудио: %s (%dс) " % (convert(info.duration), info.duration))
-        print('*****************\nТекст аудио:')
+        print("\nДлина аудио: %s (%dс) " % (convert(info.duration), info.duration))
+        print('\nРасшифровка аудио в текст...\n')
+
         myfile = open(f"{id_audio}.txt", "a")
 
         for segment in segments:
