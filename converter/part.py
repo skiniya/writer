@@ -11,7 +11,7 @@ def convert(sec):
         sec %= 60
         return "%02d:%02d:%02d" % (hour, min, sec)
 
-print("Начинаю...\n")
+print("Начинаю...")
 for file in os.listdir('/content/'):
     if fnmatch.fnmatch(file, '*.mp3'):
         dir : str = file
@@ -19,13 +19,13 @@ for file in os.listdir('/content/'):
 def time_to_sec(t1):
     h, m, s = map(int, t1.split(':'))
     return h * 3600 + m * 60 + s
-print("*****************\nВведите начальное время в формате hh:mm:ss")
+print("Введите начальное время в формате hh:mm:ss")
 t1 = input()
 t11 : int = time_to_sec(t1)
 def time_to_sec(t2):
     h, m, s = map(int, t2.split(':'))
     return h * 3600 + m * 60 + s
-print("*****************\nВведите конечное время в формате hh:mm:ss")
+print("Введите конечное время в формате hh:mm:ss")
 t2 = input()
 t22 : int = time_to_sec(t2)
 from pydub import AudioSegment

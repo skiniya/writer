@@ -32,8 +32,8 @@ for file in os.listdir('/content/'):
 
         myfile = open(f"{id_audio}.txt", "a")
 
-        for segment in tqdm(segments, unit_scale=100, unit=' циклов', ascii=False, desc='Выполнение', ncols=50,
-                            position=0, total=int((info.duration)/5), dynamic_ncols=50, colour='#4CAF50'):
+        for segment in tqdm(segments, unit_scale=100, unit=' циклов', ascii=False, desc='Выполнение', ncols=70,
+                            position=0, total=int((info.duration)/5), dynamic_ncols=70, colour='#4CAF50'):
             myfile.write(segment.text)
             #print("[%s - %s] %s" % (convert(segment.start), convert(segment.end), segment.text))
         myfile.close()
