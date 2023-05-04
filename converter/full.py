@@ -13,7 +13,7 @@ def convert(sec):
     return "%02d:%02d:%02d" % (hour, min, sec)
 
 
-print("Начинаю...\n")
+print("Начинаю...")
 for file in os.listdir('/content/'):
     if fnmatch.fnmatch(file, '*.mp3'):
         dir: str = file
@@ -26,15 +26,14 @@ for file in os.listdir('/content/'):
         print("Модель обработки аудио: " + model_size)
 
         model = WhisperModel(model_size, device="cuda", compute_type="int8_float16")
-        segments, info = model.transcribe(f"{id_audio}.mp3", beam_size=5)
-        print("\nДлина аудио: %s (%dс) " % (convert(info.duration), info.duration))
-        print('\nРасшифровка аудио в текст...')
+        segments, info = model.transcribe(f"{id_audio}.mp3", beam_size=1)
+        print("Длина аудио: %s (%dс) " % (convert(info.duration), info.duration))
+        print("Расшифровка аудио в текст...")
 
         myfile = open(f"{id_audio}.txt", "a")
 
-        for segment in tqdm(segments, unit_scale=60, unit=' циклов', ascii=False, desc='Выполнение', ncols=50,
-                            position=0,
-                            total=int((info.duration)/2.43), dynamic_ncols=50, colour='#4CAF50'):
+        for segment in tqdm(segments, unit_scale=100, unit=' циклов', ascii=False, desc='Выполнение', ncols=50,
+                            position=0, total=int((info.duration)/5), dynamic_ncols=50, colour='#4CAF50'):
             myfile.write(segment.text)
             #print("[%s - %s] %s" % (convert(segment.start), convert(segment.end), segment.text))
         myfile.close()
@@ -46,4 +45,4 @@ for file in os.listdir('/content/'):
             myfile.write(txt)
         myfile.close()
 
-        print("\n\nГотово! Можно забрать текст из txt файла.\n✔️✔️✔️✔️✔️")
+        print("Готово! Можно забрать текст из txt файла.\n✔️✔️✔️✔️✔️")
