@@ -23,17 +23,18 @@ for file in os.listdir('/content/'):
         model_size = "large-v2" # более лучшее воспроизведение текста
         #model = WhisperModel(model_size, device="cpu", compute_type="int8")
 
-        print("Модель обработки аудио: " + model_size + "\n")
+        print("Модель обработки аудио: " + model_size)
 
         model = WhisperModel(model_size, device="cuda", compute_type="int8_float16")
         segments, info = model.transcribe(f"{id_audio}.mp3", beam_size=5)
         print("\nДлина аудио: %s (%dс) " % (convert(info.duration), info.duration))
-        print('\nРасшифровка аудио в текст...\n')
+        print('\nРасшифровка аудио в текст...')
 
         myfile = open(f"{id_audio}.txt", "a")
 
         for segment in tqdm(segments, unit_scale=60, unit=' циклов', ascii=False, desc='Выполнение', ncols=50,
-                            position=0, total=(info.duration/2.43), dynamic_ncols=50, colour='#4CAF50'):
+                            position=0,
+                            total=int((info.duration)/2.43), dynamic_ncols=50, colour='#4CAF50'):
             myfile.write(segment.text)
             #print("[%s - %s] %s" % (convert(segment.start), convert(segment.end), segment.text))
         myfile.close()
@@ -45,4 +46,4 @@ for file in os.listdir('/content/'):
             myfile.write(txt)
         myfile.close()
 
-        print("*****************\nГотово! Можно забрать текст из txt файла.\n✔️✔️✔️✔️✔️")
+        print("\n\nГотово! Можно забрать текст из txt файла.\n✔️✔️✔️✔️✔️")
