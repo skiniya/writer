@@ -2,7 +2,6 @@
 from faster_whisper import WhisperModel
 from tqdm import tqdm
 from pydub import AudioSegment
-import fnmatch
 import glob, os
 
 print("Начинаю работу с аудио:")
