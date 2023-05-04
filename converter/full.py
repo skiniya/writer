@@ -1,9 +1,22 @@
 # from google.colab import files
 from faster_whisper import WhisperModel
-import fnmatch
-import os
 from tqdm import tqdm
+from pydub import AudioSegment
+import fnmatch
+import glob, os
 
+print("Начинаю работу с аудио:")
+os.chdir("/content/")
+for file in glob.glob("*.mp3"):
+    print(file)
+dst = "audio.wav"
+sound = AudioSegment.from_mp3(file)
+sound.set_channels(1)
+sound = sound.set_frame_rate(16000)
+sound = sound.set_channels(1)
+sound.export(dst, format="wav")
+
+# файл конвертируется в wav
 def convert(sec):
     sec = sec % (24 * 3600)
     hour = sec // 3600
@@ -13,36 +26,22 @@ def convert(sec):
     return "%02d:%02d:%02d" % (hour, min, sec)
 
 
-print("Начинаю...")
-for file in os.listdir('/content/'):
-    if fnmatch.fnmatch(file, '*.mp3'):
-        dir: str = file
-        id_audio = dir[:-4]
+model = WhisperModel("large-v2", device="cuda", compute_type="int8_float16")
 
-        #model_size = "medium"  # лучшее воспроизведение текста
-        model_size = "large-v2" # более лучшее воспроизведение текста
-        #model = WhisperModel(model_size, device="cpu", compute_type="int8")
+segments, info = model.transcribe("audio.wav", beam_size=1)
+print("Длительность аудио: %s (%dс) " % (convert(info.duration), info.duration))
+print('Расшифровка аудио в текст...')
 
-        print("Модель обработки аудио: " + model_size)
+myfile = open("text.txt", "a")
+for segment in tqdm(segments, unit_scale=100, unit=' циклов', ascii=False, ncols=80, position=0,
+                    total=(int(info.duration / 4)), dynamic_ncols=80, colour='#9ACD32'):
+    myfile.write(segment.text)
+myfile.close()
 
-        model = WhisperModel(model_size, device="cuda", compute_type="int8_float16")
-        segments, info = model.transcribe(f"{id_audio}.mp3", beam_size=1)
-        print("Длина аудио: %s (%dс) " % (convert(info.duration), info.duration))
-        print("Расшифровка аудио в текст...")
-
-        myfile = open(f"{id_audio}.txt", "a")
-
-        for segment in tqdm(segments, unit_scale=100, unit=' циклов', ascii=False, desc='Выполнение', ncols=70,
-                            position=0, total=int((info.duration)/5), dynamic_ncols=70, colour='#4CAF50'):
-            myfile.write(segment.text)
-            #print("[%s - %s] %s" % (convert(segment.start), convert(segment.end), segment.text))
-        myfile.close()
-
-        with open(f"{id_audio}.txt", 'r+') as myfile:
-            txt = myfile.read().replace('ё', 'е')
-            myfile.seek(0)
-            myfile.truncate()
-            myfile.write(txt)
-        myfile.close()
-
-        print("Готово! Можно забрать текст из txt файла.\n✔️✔️✔️✔️✔️")
+with open("text.txt", 'r+') as myfile:
+    txt = myfile.read().replace('ё', 'е')
+    myfile.seek(0)
+    myfile.truncate()
+    myfile.write(txt)
+myfile.close()
+print("\n📌 Готово! Можно забирать текст из txt файла.")
