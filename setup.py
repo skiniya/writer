@@ -30,8 +30,12 @@ setup(
     url="https://github.com/skiniya/writer/",
     license="MIT",
     include = ["converter*"],  # ["*"]
-    #packages=['converter'],[tool.setuptools.packages] find = {},
-    #find_packages(exclude=["tests*"]),
+    packages=find_packages(
+        # All keyword arguments below are optional:
+        where='src',
+        include=['*'],
+        exclude=[''],
+    ),
     install_requires=["faster-whisper","pydub", "tqdm"],
     exclude = ["converter.tests*"],
 
