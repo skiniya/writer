@@ -5,6 +5,7 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 import torch
+from converter import full
 
 print("Начинаю работу с аудио:")
 os.chdir("/content/")
