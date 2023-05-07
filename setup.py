@@ -3,7 +3,6 @@ import platform
 import sys
 
 import pkg_resources
-
 from setuptools import find_packages, setup
 
 
@@ -14,7 +13,6 @@ from setuptools import find_packages, setup
 requirements = []
 # if sys.platform.startswith("linux") and platform.machine() == "x86_64":
 #     requirements.append("triton==2.0.0")
-
 
 setup(
     name="writer",
@@ -29,14 +27,8 @@ setup(
     author="skiniya",
     url="",
     license="MIT",
-    include = ["converter*"],  # ["*"]
-    packages=find_packages(where="converter"),
-    package_dir={"": "converter"},
-    package_data={"converter": ["*.py"]},
-    #include_package_data=True,
-    install_requires=["faster-whisper","pydub", "tqdm"],
-    exclude=["converter.tests*"],
-
+    packages=find_packages(exclude=["tests*"]),
+    install_requires=["faster-whisper"],
     # install_requires=requirements
     # + [
     #     str(r)
@@ -44,9 +36,10 @@ setup(
     #         open(os.path.join(os.path.dirname(__file__), "requirements.txt"))
     #     )
     # ],
-
-    entry_points={ "console_scripts": ["converter=converter.full:cli"]}
-
-    #include_package_data=True,
-    #extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"] }
+    entry_points={
+        "console_scripts": ["converter=converter.convert:cli"],
+    },
+    include_package_data=True,
+    # extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"]},
 )
+

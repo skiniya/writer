@@ -1,7 +1,6 @@
-#import converter.full
+from .full import converter
 
-print(f'Файл __init__.py в пакете {__name__}')
-import converter.full
+print("Full audio")
 
 
 
