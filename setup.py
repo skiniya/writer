@@ -45,8 +45,7 @@ setup(
     #     )
     # ],
 
-    entry_points={ "console_scripts": ["convert=converter.full:cli"],
-                   }
+    entry_points={ "console_scripts": ["convert=converter.full:cli"],}
 
     #include_package_data=True,
     #extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"] }
