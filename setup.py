@@ -28,7 +28,7 @@ setup(
     url="",
     license="MIT",
     packages=find_packages(exclude=["tests*"]),
-    install_requires=["faster-whisper"],
+    install_requires=["faster-whisper","pydub", "tqdm", "fnmatch"],
     # install_requires=requirements
     # + [
     #     str(r)
@@ -37,7 +37,8 @@ setup(
     #     )
     # ],
     entry_points={
-        "console_scripts": ["converter=converter.convert:cli"],
+        "console_scripts": ["converter=converter.full:cli"],
+
     },
     include_package_data=True,
     # extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"]},
