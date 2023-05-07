@@ -1,4 +1,6 @@
-from converter import full
+from .full import convert
+
+
 
 
 
