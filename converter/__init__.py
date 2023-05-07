@@ -1,6 +1,6 @@
-from .full import convert
+from converter import convert
 
-print("Full audio")
+#print("Full audio")
 
 
 
