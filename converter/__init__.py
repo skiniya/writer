@@ -1,6 +1,4 @@
-from .full import convert
-from .part import convert
-from .delt import file
+from . import delt, full, part
 
 
 
