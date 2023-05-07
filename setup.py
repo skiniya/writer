@@ -15,9 +15,8 @@ requirements = []
 # if sys.platform.startswith("linux") and platform.machine() == "x86_64":
 #     requirements.append("triton==2.0.0")
 
-if __name__ == '__writer__':
 
- setup(
+setup(
     name="writer",
     py_modules=["whisper"],
     # version=read_version(),
@@ -30,15 +29,12 @@ if __name__ == '__writer__':
     author="skiniya",
     url="https://github.com/skiniya/writer/",
     license="MIT",
-
-    package_dir={'': 'writer'},
-    packages=find_packages('writer', include=[
-       'converter*'
-    ]),
-
-
-    #packages=['converter'],  # find_packages(exclude=["tests*"]),
+    include = ["converter*"],  # ["*"]
+    #packages=['converter'],[tool.setuptools.packages] find = {},
+    #find_packages(exclude=["tests*"]),
     install_requires=["faster-whisper","pydub", "tqdm"],
+    exclude = ["converter.tests*"],
+
     # install_requires=requirements
     # + [
     #     str(r)
@@ -47,9 +43,9 @@ if __name__ == '__writer__':
     #     )
     # ],
 
-       #  entry_points={
-           # "console_scripts": ["convert=converter.full:cli"] },
+    entry_points={ "console_scripts": ["convert=converter.full:cli"],
+                   }
 
-    include_package_data=True,
-    # extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"]},
-   )
+    #include_package_data=True,
+    #extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"] }
+)
