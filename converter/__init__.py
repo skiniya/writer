@@ -1,6 +1,6 @@
 #from .full import convert
 
-from .full import convert
+from full import convert
 
 __all__ = ['convert']
 
