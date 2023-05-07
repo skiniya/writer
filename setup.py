@@ -27,13 +27,13 @@ setup(
     readme="README.md",
     python_requires=">=3.8",
     author="skiniya",
-    url="https://github.com/skiniya/writer/",
+    url="",
     license="MIT",
     include = ["converter*"],  # ["*"]
     packages=find_packages(where="writer"),
     package_dir={"": "writer"},
     package_data={"converter": ["*.py"]},
-    include_package_data=True,
+    #include_package_data=True,
     install_requires=["faster-whisper","pydub", "tqdm"],
     exclude=["converter.tests*"],
 
@@ -45,7 +45,7 @@ setup(
     #     )
     # ],
 
-    entry_points={ "console_scripts": ["convert=converter.full:cli"],}
+    entry_points={ "console_scripts": ["convert=converter.full:cli"]}
 
     #include_package_data=True,
     #extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"] }
