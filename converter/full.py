@@ -5,9 +5,9 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 
-from . import full
+from . import convert
 if __name__ == '__main__':
-    hello_world()
+
 
 print("Начинаю работу с аудио:")
 

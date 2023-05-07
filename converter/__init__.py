@@ -1,6 +1,6 @@
 import converter.full
 
 
-def full():
+def convert():
     print("Hello world")
 
