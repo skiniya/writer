@@ -15,7 +15,9 @@ requirements = []
 # if sys.platform.startswith("linux") and platform.machine() == "x86_64":
 #     requirements.append("triton==2.0.0")
 
-setup(
+if __name__ == '__converter__':
+
+ setup(
     name="writer",
     py_modules=["whisper"],
     # version=read_version(),
@@ -26,9 +28,16 @@ setup(
     readme="README.md",
     python_requires=">=3.8",
     author="skiniya",
-    url="",
+    url="https://github.com/skiniya/writer/",
     license="MIT",
-    packages=find_packages(exclude=["tests*"]),
+
+    package_dir={'': 'writer'},
+    packages=find_packages('writer', include=[
+       'converter*'
+    ]),
+
+
+    #packages=['converter'],  # find_packages(exclude=["tests*"]),
     install_requires=["faster-whisper","pydub", "tqdm"],
     # install_requires=requirements
     # + [
@@ -37,9 +46,10 @@ setup(
     #         open(os.path.join(os.path.dirname(__file__), "requirements.txt"))
     #     )
     # ],
-    entry_points={
-        "console_scripts": ["convert=converter.full:cli"],
-},
+
+       #  entry_points={
+           # "console_scripts": ["convert=converter.full:cli"] },
+
     include_package_data=True,
     # extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"]},
-)
+   )
