@@ -53,3 +53,6 @@ with open("text.txt", 'r+') as myfile:
      myfile.write(txt)
      myfile.close()
 print("\n\n📌 Готово! Можно забирать текст из txt файла.")
+
+if __name__ == '__setup__':
+    setup()
