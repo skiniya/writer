@@ -5,8 +5,7 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 
-from . import convert
-if __name__ == '__main__':
+from convert import converter
 
 
 print("Начинаю работу с аудио:")
