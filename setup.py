@@ -32,9 +32,9 @@ setup(
     include = ["converter*"],  # ["*"]
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    package_data={"converter": ["*.py"]},
+    package_data={"writer": ["*.py"]},
     install_requires=["faster-whisper","pydub", "tqdm"],
-    exclude = ["converter.tests*"],
+    exclude=["converter.tests*"],
 
     # install_requires=requirements
     # + [
