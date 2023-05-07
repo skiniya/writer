@@ -1,4 +1,4 @@
-from converter import full, part, delt
+from converter import full
 
 
 
