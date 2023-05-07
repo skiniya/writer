@@ -30,8 +30,8 @@ setup(
     url="",
     license="MIT",
     include = ["converter*"],  # ["*"]
-    packages=find_packages(where="writer"),
-    package_dir={"": "writer"},
+    packages=find_packages(where="converter"),
+    package_dir={"": "converter"},
     package_data={"converter": ["*.py"]},
     #include_package_data=True,
     install_requires=["faster-whisper","pydub", "tqdm"],
