@@ -2,7 +2,9 @@
 from faster_whisper import WhisperModel
 from tqdm import tqdm
 from pydub import AudioSegment
+import fnmatch
 import glob, os
+import torch
 
 print("Начинаю работу с аудио:")
 os.chdir("/content/")
@@ -24,23 +26,30 @@ def convert(sec):
     sec %= 60
     return "%02d:%02d:%02d" % (hour, min, sec)
 
-
-model = WhisperModel("large-v2", device="cuda", compute_type="int8_float16")
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+if torch.cuda.is_available():
+    device = torch.device('cuda')
+    model = WhisperModel("large-v2", device="cuda", compute_type="int8_float16")
+    print("\nМодель расшифровки текста на GPU: large-v2.\n")
+else:
+    device = torch.device('cpu')
+    model = WhisperModel("medium", device="cpu", compute_type="int8")
+    print("\nМодель расшифровки текста на CPU: medium.\n")
 
 segments, info = model.transcribe("audio.wav", beam_size=1)
 print("Длительность аудио: %s (%dс) " % (convert(info.duration), info.duration))
-print('Расшифровка аудио в текст...')
+print('\nРасшифровка аудио в текст...')
 
 myfile = open("text.txt", "a")
-for segment in tqdm(segments, unit_scale=100, unit=' циклов', ascii=False, ncols=80, position=0,
-                    total=(int(info.duration / 4)), dynamic_ncols=80, colour='#9ACD32'):
+for segment in tqdm(segments, unit_scale=100, unit=' циклов', ascii=False, ncols=100, position=0,
+                    total=(int(info.duration / 4)), dynamic_ncols=100, colour='#9ACD32'):
     myfile.write(segment.text)
 myfile.close()
 
 with open("text.txt", 'r+') as myfile:
-    txt = myfile.read().replace('ё', 'е')
-    myfile.seek(0)
-    myfile.truncate()
-    myfile.write(txt)
-myfile.close()
-print("\n📌 Готово! Можно забирать текст из txt файла.")
+     txt = myfile.read().replace('ё', 'е')
+     myfile.seek(0)
+     myfile.truncate()
+     myfile.write(txt)
+     myfile.close()
+print("\n\n📌 Готово! Можно забирать текст из txt файла.")
