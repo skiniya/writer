@@ -4,7 +4,7 @@ from tqdm import tqdm
 from pydub import AudioSegment
 import fnmatch
 import glob, os
-
+from converter import convert
 
 print("Начинаю работу с аудио:")
 
