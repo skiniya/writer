@@ -29,7 +29,7 @@ setup(
     author="skiniya",
     url="https://github.com/skiniya/writer/",
     license="MIT",
-    include = ["writer*"],  # ["*"]
+    include = ["converter*"],  # ["*"]
     packages=find_packages(where="writer"),
     package_dir={"": "writer"},
     package_data={"converter": ["*.py"]},
