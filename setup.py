@@ -49,7 +49,7 @@ setup(
 
     entry_points={
         'console_scripts': [
-            'convert = converter.full:convert',
+            'converter = converter.full:cli',
         ]
     }
     #entry_points={ "console_scripts": ["convert=converter.full:cli"],
