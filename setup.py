@@ -29,10 +29,10 @@ setup(
     author="skiniya",
     url="https://github.com/skiniya/writer/",
     license="MIT",
-    include = ["converter*"],  # ["*"]
+    include = ["writer*"],  # ["*"]
     packages=find_packages(where="src"),
     package_dir={"": "src"},
-    package_data={"writer": ["*.py"]},
+    package_data={"converter": ["*.py"]},
     install_requires=["faster-whisper","pydub", "tqdm"],
     exclude=["converter.tests*"],
 
