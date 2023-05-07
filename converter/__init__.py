@@ -1,4 +1,4 @@
-from converter import convert
+from .full import convert
 
 print("Full audio")
 
