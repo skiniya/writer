@@ -1,10 +1,13 @@
 # from google.colab import files
-from converter import full
 from faster_whisper import WhisperModel
 from tqdm import tqdm
 from pydub import AudioSegment
 import fnmatch
 import glob, os
+
+from . import full
+if __name__ == '__main__':
+    hello_world()
 
 print("Начинаю работу с аудио:")
 
