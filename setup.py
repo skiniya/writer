@@ -3,6 +3,7 @@ import platform
 import sys
 
 import pkg_resources
+import converter
 from setuptools import find_packages, setup
 
 
@@ -38,6 +39,7 @@ setup(
     # ],
     entry_points={
         "console_scripts": ["converter=converter.full:cli"],
+
 
     },
     include_package_data=True,
