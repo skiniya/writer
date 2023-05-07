@@ -28,7 +28,7 @@ setup(
     url="",
     license="MIT",
     packages=find_packages(exclude=["tests*"]),
-    install_requires=["faster-whisper","pydub", "tqdm", "fnmatch"],
+    install_requires=["faster-whisper","pydub", "tqdm"],
     # install_requires=requirements
     # + [
     #     str(r)
