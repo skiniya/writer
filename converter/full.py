@@ -5,6 +5,8 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 
+def main():
+
 print("Начинаю работу с аудио:")
 
 os.chdir("/content/")
@@ -64,5 +66,8 @@ for file in glob.glob("*.mp3"):
     print("\n\n📌 Готово! Можно забирать текст из txt файла.")
 else:
     print("\nРабота завершена.")
+
+if __name__ == '__main__':
+    main()
 
 
