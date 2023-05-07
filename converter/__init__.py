@@ -1,6 +1,8 @@
 #from .full import convert
 
-from full import convert
+print("Пакет Converter импортирован.")
+
+from .full import convert
 
 __all__ = ['convert']
 
