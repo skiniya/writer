@@ -43,4 +43,3 @@ setup(
     include_package_data=True,
     # extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"]},
 )
-
