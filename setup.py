@@ -15,7 +15,7 @@ requirements = []
 # if sys.platform.startswith("linux") and platform.machine() == "x86_64":
 #     requirements.append("triton==2.0.0")
 
-if __name__ == '__converter__':
+if __name__ == '__writer__':
 
  setup(
     name="writer",
