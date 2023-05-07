@@ -5,7 +5,6 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 
-def main():
 
 print("Начинаю работу с аудио:")
 
@@ -67,7 +66,7 @@ for file in glob.glob("*.mp3"):
 else:
     print("\nРабота завершена.")
 
-if __name__ == '__main__':
-    main()
+if __name__ == '__convert__':
+    convert()
 
 
