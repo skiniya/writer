@@ -33,6 +33,7 @@ setup(
     packages=find_packages(where="writer"),
     package_dir={"": "writer"},
     package_data={"converter": ["*.py"]},
+    include_package_data=True,
     install_requires=["faster-whisper","pydub", "tqdm"],
     exclude=["converter.tests*"],
 
