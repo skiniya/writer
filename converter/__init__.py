@@ -6,7 +6,7 @@ print("Вас приветствует код по расшифровке ауд
 
 import converter
 
-from .full import *
+from .full import convert
 
 
 

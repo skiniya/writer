@@ -5,7 +5,6 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 
-def Full_audio():
 
 print("Начинаю работу с аудио:")
 
