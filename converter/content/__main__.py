@@ -9,3 +9,6 @@ partAudio()
 
 from .cut import cutAudio
 cutAudio()
+
+from .autocorr import autoCorrect
+autoCorrect()

@@ -12,7 +12,7 @@ setup(
     py_modules=["converter"],
     license="MIT",
     author="Skiniya",
-    install_requires=['faster-whisper', 'pydub', 'tqdm'],
+    install_requires=['faster-whisper', 'pydub', 'tqdm', 'autocorrect'],
     description="Automatically generate text into your audio",
     entry_points={'console_scripts':
                       ['converter=converter.full:fullAudio']},
