@@ -72,8 +72,5 @@ def fullAudio():
     else:
         print("\nНет загруженного аудио. Работа завершена.")
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
  fullAudio()
-
- #else:
-#    print(f"main: {__name__}")
