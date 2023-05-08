@@ -74,14 +74,14 @@ def partAudio():
             # print("[%s] %s" % (convert(segment.start), segment.text))
             myfile.close()
 
-        Path('text.txt').write_text(Path('text.txt').read_text().replace('ё', 'е'))
-        Path('text.txt').write_text(Path('text.txt').read_text().replace('Исус', 'Иисус'))
-        Path('text.txt').write_text(Path('text.txt').read_text().replace('Узя', 'Уззия'))
-        Path('text.txt').write_text(Path('text.txt').read_text().replace('Узю', 'Уззию'))
-        Path('text.txt').write_text(Path('text.txt').read_text().replace('Узия', 'Уззия'))
+            Path('text.txt').write_text(Path('text.txt').read_text().replace('ё', 'е'))
+            Path('text.txt').write_text(Path('text.txt').read_text().replace('Исус', 'Иисус'))
+            Path('text.txt').write_text(Path('text.txt').read_text().replace('Узя', 'Уззия'))
+            Path('text.txt').write_text(Path('text.txt').read_text().replace('Узю', 'Уззию'))
+            Path('text.txt').write_text(Path('text.txt').read_text().replace('Узия', 'Уззия'))
 
-        print("\nСлова в тексте заменены.")
-        print("\n📌 Можно забирать текст из txt файла.")
+            print("\nСлова в тексте заменены.")
+            print("\n📌 Можно забирать текст из txt файла.")
     else:
         print("\nРабота завершена.")
 
