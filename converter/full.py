@@ -6,7 +6,7 @@ import fnmatch
 import glob, os
 
 
-
+def main():
 
 
 print("Начинаю работу с аудио:")
@@ -33,7 +33,6 @@ for file in glob.glob("*.mp3"):
         return "%02d:%02d:%02d" % (hour, min, sec)
 
     import torch
-    def main():
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     if torch.cuda.is_available():
