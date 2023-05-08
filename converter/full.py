@@ -66,8 +66,8 @@ for file in glob.glob("*.mp3"):
 else:
     print("\nРабота завершена.")
 
-if __name__ == '__convert__':
+#if __name__ == '__convert__':
 
-    convert()
+#    convert()
 
 
