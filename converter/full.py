@@ -1,16 +1,16 @@
 # from google.colab import files
+
+from main import *
+
 from faster_whisper import WhisperModel
 from tqdm import tqdm
 from pydub import AudioSegment
 import fnmatch
 import glob, os
 
-from main import *
-print(f"full: {__name__}")
-
 print("Начинаю работу с аудио:")
 
-os.chdir("/content/")
+os.chdir("converter/content/")
 for file in glob.glob("*.mp3"):
     print(file)
     dst = "audio.wav"
@@ -69,5 +69,5 @@ for file in glob.glob("*.mp3"):
 
     print("\n📌 Готово! Можно забирать текст из txt файла.")
 else:
-    print("\nРабота завершена.")
+    print("\nНет загруженного аудио. Работа завершена.")
 
