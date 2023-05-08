@@ -1,6 +1,17 @@
-# from google.colab import files
+# файл конвертируется в wav
+import torch
+# замена слов
+from pathlib import Path
 
-#from main import *
+
+def convert(sec):
+    sec = sec % (24 * 3600)
+    hour = sec // 3600
+    sec %= 3600
+    min = sec // 60
+    sec %= 60
+    return "%02d:%02d:%02d" % (hour, min, sec)
+
 
 def fullAudio():
     print("Вас приветствует код по расшифровке аудио.\n__________________________________________\n")
@@ -12,7 +23,8 @@ def fullAudio():
 
     print("Начинаю работу с аудио:")
 
-    os.chdir("converter/content/")
+    # os.chdir("converter/content/")
+    os.chdir("./")
     for file in glob.glob("*.mp3"):
         print(file)
         dst = "audio.wav"
@@ -21,18 +33,6 @@ def fullAudio():
         sound = sound.set_frame_rate(16000)
         sound = sound.set_channels(1)
         sound.export(dst, format="wav")
-
-        # файл конвертируется в wav
-
-        def convert(sec):
-            sec = sec % (24 * 3600)
-            hour = sec // 3600
-            sec %= 3600
-            min = sec // 60
-            sec %= 60
-            return "%02d:%02d:%02d" % (hour, min, sec)
-
-        import torch
 
         device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
         if torch.cuda.is_available():
@@ -58,8 +58,6 @@ def fullAudio():
             # print("[%s] %s" % (convert(segment.start), segment.text))
         myfile.close()
 
-        # замена слов
-        from pathlib import Path
         Path('text.txt').write_text(Path('text.txt').read_text().replace('ё', 'е'))
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Исус', 'Иисус'))
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Узя', 'Уззия'))
@@ -72,5 +70,6 @@ def fullAudio():
     else:
         print("\nНет загруженного аудио. Работа завершена.")
 
+
 if __name__ == '__main__':
- fullAudio()
+    fullAudio()

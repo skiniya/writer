@@ -14,6 +14,6 @@ setup(
     author="Skiniya",
     install_requires=['faster-whisper', 'pydub', 'tqdm'],
     description="Automatically generate text into your audio",
-    entry_points={'console_scripts': ['converter=converter.full:main']},
+    entry_points={'console_scripts': ['converter=converter.full:fullAudio']},
     include_package_data=True,
 )
