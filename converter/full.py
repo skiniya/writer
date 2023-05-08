@@ -73,17 +73,7 @@ def fullAudio():
         print("\nНет загруженного аудио. Работа завершена.")
 
 #if __name__ == '__main__':
-answer = input("Что вы хотите: \n1 - Расшифровка аудио полностью \n2 - Расшифврока фрагмента аудио \n3 - Удалить "
-               "файлы в "
-      "Диспетчере файлов")
-if answer == '1':
  fullAudio()
-if answer == '2':
- fullAudio()
-if answer == '3':
- fullAudio()
-else:
- print("До свидания.")
 
  #else:
 #    print(f"main: {__name__}")
