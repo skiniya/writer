@@ -37,7 +37,7 @@ setup(
     #         open(os.path.join(os.path.dirname(__file__), "requirements.txt"))
     #     )
     # ],
-    entry_points={"console_scripts": ["converter=converter.full:main"]}
+    entry_points={"console_scripts": ["writer=writer.full:main"]}
     #include_package_data=True,
     # extras_require={"dev": ["pytest", "scipy", "black", "flake8", "isort"]},
 )
