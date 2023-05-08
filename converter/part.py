@@ -72,16 +72,16 @@ def partAudio():
                             total=(int(info.duration / 4)), dynamic_ncols=100, colour='#9ACD32'):
             myfile.write(segment.text)
             # print("[%s] %s" % (convert(segment.start), segment.text))
-            myfile.close()
+        myfile.close()
 
-            Path('text.txt').write_text(Path('text.txt').read_text().replace('ё', 'е'))
-            Path('text.txt').write_text(Path('text.txt').read_text().replace('Исус', 'Иисус'))
-            Path('text.txt').write_text(Path('text.txt').read_text().replace('Узя', 'Уззия'))
-            Path('text.txt').write_text(Path('text.txt').read_text().replace('Узю', 'Уззию'))
-            Path('text.txt').write_text(Path('text.txt').read_text().replace('Узия', 'Уззия'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('ё', 'е'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Исус', 'Иисус'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Узя', 'Уззия'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Узю', 'Уззию'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Узия', 'Уззия'))
 
-            print("\nСлова в тексте заменены.")
-            print("\n📌 Можно забирать текст из txt файла.")
+        print("\nСлова в тексте заменены.")
+        print("\n📌 Можно забирать текст из txt файла.")
     else:
         print("\nРабота завершена.")
 
