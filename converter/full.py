@@ -2,6 +2,10 @@
 
 def Full_audio():
 
+import faster_whisper
+import pydub
+import tqdm
+
 from faster_whisper import WhisperModel
 from tqdm import tqdm
 from pydub import AudioSegment
