@@ -2,7 +2,7 @@
 
 #from main import *
 
-def main():
+def full():
 
 from faster_whisper import WhisperModel
 from tqdm import tqdm
@@ -74,6 +74,6 @@ else:
     print("\nНет загруженного аудио. Работа завершена.")
 
 if __name__ == '__main__':
-    main()
+    full()
 else:
     print(f"main: {__name__}")
