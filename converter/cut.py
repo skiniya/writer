@@ -1,25 +1,22 @@
-import torch
-from pathlib import Path
+import fnmatch
+import glob, os
 from pydub import AudioSegment
 def cutAudio():
-    import fnmatch
-    import os
-
     print("Начинаю работу с аудио:")
+    def time_to_sec(t1):
+        h, m, s = map(int, t1.split(':'))
+        return h * 3600 + m * 60 + s
+
+    def time_to_sec(t2):
+        h, m, s = map(int, t2.split(':'))
+        return h * 3600 + m * 60 + s
 
     os.chdir("./")
     for file in glob.glob("*.mp3"):
         print(file)
-
-    def time_to_sec(t1):
-        h, m, s = map(int, t1.split(':'))
-        return h * 3600 + m * 60 + s
         print("Введите начальное время в формате hh:mm:ss")
         t1 = input()
         t11: int = time_to_sec(t1)
-    def time_to_sec(t2):
-        h, m, s = map(int, t2.split(':'))
-        return h * 3600 + m * 60 + s
         print("Введите конечное время в формате hh:mm:ss")
         t2 = input()
         t22: int = time_to_sec(t2)
@@ -35,7 +32,6 @@ def cutAudio():
         print("📌 Готово! Аудио вырезано, называется fragment.mp3.")
     else:
         print("\nРабота завершена.")
-
 
 if __name__ == '__main__':
     cutAudio()
