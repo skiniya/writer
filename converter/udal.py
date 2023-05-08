@@ -1,6 +1,9 @@
 import glob, os
 
-def Udal():
+from converter.full import fullAudio
+
+
+def udalFile():
     os.chdir("./")
     for file in glob.glob("*.mp3"):
         os.remove(file)
@@ -14,4 +17,5 @@ def Udal():
         print("**********\nФайлов нет.")
 
 if __name__ == '__main__':
-    Udal()
+    fullAudio()
+else: udalFile()
