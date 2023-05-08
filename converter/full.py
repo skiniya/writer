@@ -5,10 +5,10 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 
+from main import *
+print(f"full: {__name__}")
 
-def main():
-
-    print("Начинаю работу с аудио:")
+print("Начинаю работу с аудио:")
 
 os.chdir("/content/")
 for file in glob.glob("*.mp3"):
@@ -71,5 +71,3 @@ for file in glob.glob("*.mp3"):
 else:
     print("\nРабота завершена.")
 
-if __name__ == '__main__':
-    main()
