@@ -17,5 +17,4 @@ def udalFile():
         print("**********\nФайлов нет.")
 
 if __name__ == '__main__':
-    fullAudio()
-else: udalFile()
+    udalFile()
