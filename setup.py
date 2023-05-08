@@ -16,7 +16,7 @@ setup(
     ],
     description="Automatically generate text into your audio",
     entry_points={
-        'console_scripts': ['converter=converter.convert:main'],
+        'console_scripts': ['converter=converter.full:convert'],
     },
     include_package_data=True,
 )
