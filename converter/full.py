@@ -1,6 +1,8 @@
 # from google.colab import files
 
-from main import *
+#from main import *
+
+def main():
 
 from faster_whisper import WhisperModel
 from tqdm import tqdm
@@ -71,3 +73,7 @@ for file in glob.glob("*.mp3"):
 else:
     print("\nНет загруженного аудио. Работа завершена.")
 
+if __name__ == '__main__':
+    main()
+else:
+    print(f"main: {__name__}")

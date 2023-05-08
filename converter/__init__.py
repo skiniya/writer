@@ -1,7 +1,5 @@
 
-
-
-
+from main import *
 
 
 
