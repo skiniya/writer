@@ -1,6 +1,6 @@
 import glob, os
 
-def Udal()
+def Udal():
     os.chdir("./")
     for file in glob.glob("*.mp3"):
         os.remove(file)
