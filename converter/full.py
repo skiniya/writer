@@ -1,17 +1,11 @@
 # from google.colab import files
-
-def Full_audio():
-
-import faster_whisper
-import pydub
-import tqdm
-
 from faster_whisper import WhisperModel
 from tqdm import tqdm
 from pydub import AudioSegment
 import fnmatch
 import glob, os
 
+def Full_audio():
 
 print("Начинаю работу с аудио:")
 
