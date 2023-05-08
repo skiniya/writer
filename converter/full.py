@@ -1,8 +1,6 @@
 # from google.colab import files
-!pip install git+https://github.com/skiniya/writer.git --quiet --disable-pip-version-check
-!pip install faster_whisper
-!pip install pydub
-!pip install tqdm
+
+def Full_audio():
 
 from faster_whisper import WhisperModel
 from tqdm import tqdm
@@ -70,10 +68,5 @@ for file in glob.glob("*.mp3"):
     print("\n\n📌 Готово! Можно забирать текст из txt файла.")
 else:
     print("\nРабота завершена.")
-
-if __name__ == '__main__':
-    print("Мэйн")
-
-#    convert()
 
 

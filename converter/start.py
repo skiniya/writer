@@ -1,8 +1,11 @@
 #from converter import full, part, udal
 
-import converter
+#import converter
 
-print("Test")
+import full
+
+full.Full_audio()
+print("Full audio")
 
 
 
