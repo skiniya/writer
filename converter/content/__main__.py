@@ -3,3 +3,9 @@ fullAudio()
 
 from .udal import udalFile
 udalFile()
+
+from .part import partAudio
+partAudio()
+
+from .cut import cutAudio
+cutAudio()
