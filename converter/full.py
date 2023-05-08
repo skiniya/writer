@@ -67,6 +67,7 @@ else:
     print("\nРабота завершена.")
 
 if __name__ == '__convert__':
+
     convert()
 
 
