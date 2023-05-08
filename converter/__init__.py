@@ -2,11 +2,10 @@
 
 #print('__init__ converter')
 
-print("Вас приветствует код по расшифровке аудио в текст.\n")
+print("Вас приветствует код по расшифровке аудио в текст.\n__________________________________________________\n")
 
-import converter
 
-from .full import convert
+from .full import *
 
 
 
