@@ -1,6 +1,11 @@
-from .full import convert, file, myfile
+#from .full import convert
 
-__all__ = ['convert','file','myfile']
+
+print("Вас приветствует код по расшифровке аудио в текст.")
+
+print('__init__ converter')
+
+from full import *
 
 
 

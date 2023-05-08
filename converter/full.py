@@ -1,4 +1,9 @@
 # from google.colab import files
+!pip install git+https://github.com/skiniya/writer.git --quiet --disable-pip-version-check
+!pip install faster_whisper
+!pip install pydub
+!pip install tqdm
+
 from faster_whisper import WhisperModel
 from tqdm import tqdm
 from pydub import AudioSegment
@@ -66,7 +71,8 @@ for file in glob.glob("*.mp3"):
 else:
     print("\nРабота завершена.")
 
-#if __name__ == '__convert__':
+if __name__ == '__main__':
+    print("Мэйн")
 
 #    convert()
 
