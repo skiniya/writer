@@ -5,7 +5,7 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 
-def main():
+def full_f():
 
 print("Начинаю работу с аудио:")
 
@@ -69,5 +69,5 @@ else:
 
 
 if __name__ == '__main__':
-    main()
+    full_f()
 
