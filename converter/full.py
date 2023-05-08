@@ -5,8 +5,9 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 
-def full_audio():
 
+class full_audio:
+    def __init__(
 print("Начинаю работу с аудио:")
 
 os.chdir("/content/")
@@ -29,7 +30,6 @@ for file in glob.glob("*.mp3"):
         min = sec // 60
         sec %= 60
         return "%02d:%02d:%02d" % (hour, min, sec)
-
 
     import torch
 
@@ -67,5 +67,5 @@ for file in glob.glob("*.mp3"):
 else:
     print("\nФайлов нет. Работа завершена.")
 
-
+):
 
