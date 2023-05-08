@@ -5,10 +5,13 @@ from pydub import AudioSegment
 import fnmatch
 import glob, os
 
-def main():
-#print("Начинаю работу с аудио:")
+
+print("Начинаю работу с аудио:")
 
 os.chdir("/content/")
+def main():
+    print(__name__)
+
 for file in glob.glob("*.mp3"):
     print(file)
     dst = "audio.wav"
