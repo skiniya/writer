@@ -1,9 +1,5 @@
-# файл конвертируется в wav
 import torch
-# замена слов
 from pathlib import Path
-
-
 def convert(sec):
     sec = sec % (24 * 3600)
     hour = sec // 3600
@@ -11,10 +7,7 @@ def convert(sec):
     min = sec // 60
     sec %= 60
     return "%02d:%02d:%02d" % (hour, min, sec)
-
-
 def fullAudio():
-    print("Вас приветствует код по расшифровке аудио.\n__________________________________________\n")
     from faster_whisper import WhisperModel
     from tqdm import tqdm
     from pydub import AudioSegment
@@ -23,7 +16,6 @@ def fullAudio():
 
     print("Начинаю работу с аудио:")
 
-    # os.chdir("converter/content/")
     os.chdir("./")
     for file in glob.glob("*.mp3"):
         print(file)
@@ -43,9 +35,6 @@ def fullAudio():
             device = torch.device('cpu')
             model = WhisperModel("medium", device="cpu", compute_type="int8")
             print("\nМодель расшифровки текста на CPU: medium.\n")
-
-        # model = WhisperModel("large-v2", device="cuda", compute_type="int8_float16")
-        # model = WhisperModel("large-v2", device="cpu", compute_type="int8")
 
         segments, info = model.transcribe("audio.wav", beam_size=1)
         print("Длительность аудио: %s (%dс) " % (convert(info.duration), info.duration))
@@ -68,7 +57,8 @@ def fullAudio():
 
         print("\n📌 Готово! Можно забирать текст из txt файла.")
     else:
-        print("\nНет загруженного аудио. Работа завершена.")
+        print("\nНет аудиофайла.")
+    print("Работа завершена.")
 
 
 if __name__ == '__main__':
