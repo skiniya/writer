@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 
 setup(
     version="1.0",
-    name="Converter",
+    name="converter",
     packages=find_packages(),
     py_modules=["converter"],
     license="MIT",
