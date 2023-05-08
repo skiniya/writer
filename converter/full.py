@@ -6,8 +6,9 @@ import fnmatch
 import glob, os
 
 
-class full_audio:
-    def __init__(
+
+
+
 print("Начинаю работу с аудио:")
 
 os.chdir("/content/")
@@ -32,6 +33,7 @@ for file in glob.glob("*.mp3"):
         return "%02d:%02d:%02d" % (hour, min, sec)
 
     import torch
+    def main():
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     if torch.cuda.is_available():
@@ -57,15 +59,20 @@ for file in glob.glob("*.mp3"):
         # print("[%s] %s" % (convert(segment.start), segment.text))
     myfile.close()
 
-    with open("text.txt", 'r+') as myfile:
-        txt = myfile.read().replace('ё', 'е')
-        myfile.seek(0)
-        myfile.truncate()
-        myfile.write(txt)
-        myfile.close()
+    # замена слов
+    from pathlib import Path
+    Path('text.txt').write_text(Path('text.txt').read_text().replace('ё', 'е'))
+    Path('text.txt').write_text(Path('text.txt').read_text().replace('Исус', 'Иисус'))
+    Path('text.txt').write_text(Path('text.txt').read_text().replace('Узя', 'Уззия'))
+    Path('text.txt').write_text(Path('text.txt').read_text().replace('Узю', 'Уззию'))
+    Path('text.txt').write_text(Path('text.txt').read_text().replace('Узия', 'Уззия'))
+
+    print("\nСлова в тексте заменены.")
+
     print("\n\n📌 Готово! Можно забирать текст из txt файла.")
 else:
     print("\nФайлов нет. Работа завершена.")
 
-):
 
+if __name__ == '__main__':
+    main()
