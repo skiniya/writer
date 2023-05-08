@@ -1,5 +1,6 @@
 from autocorrect import Speller
 import glob, os
+from pathlib import Path
 def autoCorrect():
     print("Начинаю работу с текстом:")
 
