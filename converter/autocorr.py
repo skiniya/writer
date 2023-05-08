@@ -15,12 +15,12 @@ def autoCorrect():
         myfile.write(result)
         myfile.close()
 
-        Path('text_correct.txt').write_text(Path('text_correct.txt').read_text().replace('ё', 'е'))
-        Path('text_correct.txt').write_text(Path('text_correct.txt').read_text().replace('Исус', 'Иисус'))
-        Path('text_correct.txt').write_text(Path('text_correct.txt').read_text().replace('Узя', 'Уззия'))
-        Path('text_correct.txt').write_text(Path('text_correct.txt').read_text().replace('Ося', 'Уззия'))
-        Path('text_correct.txt').write_text(Path('text_correct.txt').read_text().replace('Узю', 'Уззию'))
-        Path('text_correct.txt').write_text(Path('text_correct.txt').read_text().replace('Узия', 'Уззия'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('ё', 'е'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Исус', 'Иисус'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Узя', 'Уззия'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Ося', 'Уззия'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Узю', 'Уззию'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Узия', 'Уззия'))
 
         print("\nГотово! Можно забирать текст из text_correct.txt.")
     else:
