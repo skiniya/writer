@@ -14,7 +14,7 @@ def udalFile():
     for file in glob.glob("*.txt"):
         os.remove(file)
         print(f"{file} удален")
-        print("**********\nФайлов нет.")
+    print("**********\nФайлов нет.")
 
 if __name__ == '__main__':
     udalFile()
