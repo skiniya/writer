@@ -50,6 +50,7 @@ def fullAudio_sub():
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Исус', 'Иисус'))
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Узя', 'Уззия'))
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Ося', 'Уззия'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Уся', 'Уззия'))
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Узю', 'Уззию'))
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Узия', 'Уззия'))
 
