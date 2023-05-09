@@ -22,6 +22,7 @@ def autoCorrect():
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Ося', 'Уззия'))
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Узю', 'Уззию'))
         Path('text.txt').write_text(Path('text.txt').read_text().replace('Узия', 'Уззия'))
+        Path('text.txt').write_text(Path('text.txt').read_text().replace('Уния', 'Уззия'))
 
         print("\nГотово! Можно забирать текст из text_correct.txt.")
     else:
