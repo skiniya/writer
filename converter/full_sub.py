@@ -42,7 +42,7 @@ def fullAudio_sub():
 
         myfile = open("text.txt", "a")
         for segment in segments:
-            print("[%s] : %s" % (convert(segment.start), segment.text))
+            print("%s: %s" % (convert(segment.start), segment.text))
             myfile.write(segment.text)
         myfile.close()
 
