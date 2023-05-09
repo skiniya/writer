@@ -12,3 +12,6 @@ cutAudio()
 
 from .autocorr import autoCorrect
 autoCorrect()
+
+from .full_sub import fullAudio_sub
+fullAudio_sub()

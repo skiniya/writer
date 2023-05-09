@@ -7,7 +7,7 @@ def convert(sec):
     min = sec // 60
     sec %= 60
     return "%02d:%02d:%02d" % (hour, min, sec)
-def fullAudio():
+def fullAudio_sub():
     from faster_whisper import WhisperModel
     from tqdm import tqdm
     from pydub import AudioSegment
@@ -41,10 +41,9 @@ def fullAudio():
         print('\nРасшифровка аудио в текст...')
 
         myfile = open("text.txt", "a")
-        for segment in tqdm(segments, unit_scale=100, unit=' циклов', ascii=False, ncols=100, position=0,
-                            total=(int(info.duration / 4)), dynamic_ncols=100, colour='#9ACD32'):
+        for segment in segments):
+            print("[%s] : %s" % (convert(segment.start), segment.text))
             myfile.write(segment.text)
-            #print("[%s] %s" % (convert(segment.start), segment.text))
         myfile.close()
 
         Path('text.txt').write_text(Path('text.txt').read_text().replace('ё', 'е'))
@@ -61,4 +60,4 @@ def fullAudio():
 
 
 if __name__ == '__main__':
-    fullAudio()
+    fullAudio_sub()
