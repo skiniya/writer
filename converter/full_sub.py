@@ -41,7 +41,7 @@ def fullAudio_sub():
         print('\nРасшифровка аудио в текст...')
 
         myfile = open("text.txt", "a")
-        for segment in segments):
+        for segment in segments:
             print("[%s] : %s" % (convert(segment.start), segment.text))
             myfile.write(segment.text)
         myfile.close()
